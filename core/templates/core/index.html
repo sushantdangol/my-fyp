@@ -1,0 +1,56 @@
+{% extends 'core/default/base.html' %}
+{% block content %}
+
+<div class="card-container">
+{% for item in index %}
+<h1>{{ item.title }}</h1>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card" style="width: 50rem;">
+                <div class="card-body">
+                <h5 class="card-title">Original</h5>
+                <h6 class="card-subtitle mb-2 text-muted" >Summarization Powered by TextRank - Sushant Dangol</h6>
+                <p class="card-text sum-content">{{ item.content }}</p>
+                </div>
+            </div>
+    
+            </div>
+            <div class="col-sm-6">
+            <div class="card" style="width: 50rem;">
+            <div class="card-body">
+                <h5 class="card-title">Summarized</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Summarization Powered by TextRank - Sushant Dangol</h6>
+                <p class="card-text sum-content">{{ item.summary }}</p>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    Show Rouge Score
+                </button>
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Rouge Score</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          {{ item.rouge }}
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <hr />
+{% endfor %}
+</div>
+
+    <h1><a href="/input">Summarize your text</a></h1>
+    <h1><a href="/url-inp">From URL</a></h1>
+    
+</body>
+</html>
+{% endblock %}
+

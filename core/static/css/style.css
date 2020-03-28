@@ -1,0 +1,22 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.custom-container{
+    margin: 90px;
+}
+
+.sum-content{
+    height: 400px;
+    overflow: scroll;
+}
+
+.custom-form-txtinp{
+    width: 1000px;
+}
+
+.cus-btn{
+    margin: 10px 10px 10px 0px;
+}
+
